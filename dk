@@ -33,9 +33,6 @@ class dockerDkManager
                     passthru("docker network rm $(docker network ls | tail -n+2 | awk '{if($2 !~ /bridge|none|host/){ print $1 }}')");
                     break;
                 case "5":
-                    break;
-
-                case "5":
                     exit;
                     break;
             }
@@ -47,13 +44,13 @@ class dockerDkManager
     public function printMenu()
     {
 
-        echo "************ Reservation System ******************\n";
+        echo "************ Docker Manager System ******************\n";
         echo "1 - Remove Containers \n";
         echo "2 - Remove Imagens \n";
-        echo "3 - Remove Volumes\n";
-        echo "4 - Remove Networks Reservation\n";
+        echo "3 - Remove Volumes \n";
+        echo "4 - Remove Networks \n";
         echo "5 - Quit\n";
-        echo "************ Reservation System ******************\n";
+        echo "************ Docker Manager System ******************\n";
         echo "Enter your choice from 1 to 5 ::";
     }
 
