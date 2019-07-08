@@ -13,18 +13,20 @@ class dockerDkManager
 
     public function __MAIN__($args)
     {
+
         while (true) {
             // Print the menu on console
             $this->printMenu();
 
             // Read user choice
             $choice = trim( fgets(STDIN) );
+            echo  "\e[33m ";
             switch ($choice) {
                 case "1":
                     passthru("docker rm -f $(docker ps -a -q)");
                     break;
                 case "2":
-                    passthru("odocker rmi -f $(docker images -a -q)");
+                    passthru("docker rmi -f $(docker images -a -q)");
                     break;
                 case "3":
                     passthru("docker volume rm $(docker volume ls -q)");
@@ -36,6 +38,7 @@ class dockerDkManager
                     exit;
                     break;
             }
+            echo  "\e[0m";
 
         }
     }
@@ -43,7 +46,7 @@ class dockerDkManager
 
     public function printMenu()
     {
-
+        echo  "\e[34m ";
         echo "************ Docker Manager System ******************\n";
         echo "1 - Remove Containers \n";
         echo "2 - Remove Imagens \n";
@@ -51,7 +54,14 @@ class dockerDkManager
         echo "4 - Remove Networks \n";
         echo "5 - Quit\n";
         echo "************ Docker Manager System ******************\n";
+        echo  "\e[0m";
+
+        echo  "\e[37m ";
         echo "Enter your choice from 1 to 5 ::";
+        echo  "\e[0m";
+
+
+
     }
 
 
