@@ -1,0 +1,66 @@
+#!/usr/bin/php
+<?php
+
+new dockerDkManager($argv);
+class dockerDkManager
+{
+
+    public function __construct($argv)
+    {
+        $this->__MAIN__($argv);
+    }
+
+
+    public function __MAIN__($args)
+    {
+        while (true) {
+            // Print the menu on console
+            $this->printMenu();
+
+            // Read user choice
+            $choice = trim( fgets(STDIN) );
+            switch ($choice) {
+                case "1":
+                    passthru("docker rm -f $(docker ps -a -q)");
+                    break;
+                case "2":
+                    passthru("odocker rmi -f $(docker images -a -q)");
+                    break;
+                case "3":
+                    passthru("docker volume rm $(docker volume ls -q)");
+                    break;
+                case "4":
+                    passthru("docker network rm $(docker network ls | tail -n+2 | awk '{if($2 !~ /bridge|none|host/){ print $1 }}')");
+                    break;
+                case "5":
+                    break;
+
+                case "5":
+                    exit;
+                    break;
+            }
+
+        }
+    }
+
+
+    public function printMenu()
+    {
+
+        echo "************ Reservation System ******************\n";
+        echo "1 - Remove Containers \n";
+        echo "2 - Remove Imagens \n";
+        echo "3 - Remove Volumes\n";
+        echo "4 - Remove Networks Reservation\n";
+        echo "5 - Quit\n";
+        echo "************ Reservation System ******************\n";
+        echo "Enter your choice from 1 to 5 ::";
+    }
+
+
+
+
+}
+
+
+
