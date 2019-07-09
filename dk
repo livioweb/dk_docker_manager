@@ -16,7 +16,7 @@ class dockerDkManager
     {
 
         while (true) {
-
+            passthru("clear");
             $this->printMenu();
 
             // Read user choice
