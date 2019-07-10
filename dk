@@ -16,7 +16,7 @@ class dockerDkManager
     {
 
         while (true) {
-            passthru("clear");
+            //passthru("clear");
             $this->printMenu();
 
             // Read user choice
@@ -41,7 +41,6 @@ class dockerDkManager
                     break;
 
                 case "10":
-
                     passthru("docker ps --all --format \"table {{.ID}}\t{{.Names}}\"");
                     break;
 
