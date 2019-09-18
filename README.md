@@ -15,7 +15,7 @@ $sudo cd dk_docker_manager
 $sudo chmod +x dk
 ````
 ````
-$sudo dk cp dk /bin/dk
+$sudo cp dk /bin/dk
 ````
 
 ````
