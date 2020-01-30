@@ -2,12 +2,12 @@
 
 ##Install
 
-
-
 ````
 $ git clone https://github.com/livioweb/dk_docker_manager.git
 ````
-
+````
+sudo apt install php7.2-cli
+````
 ````
 $cd dk_docker_manager
 ````
