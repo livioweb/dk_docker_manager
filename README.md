@@ -9,7 +9,7 @@ $ git clone https://github.com/livioweb/dk_docker_manager.git
 ````
 
 ````
-$sudo cd dk_docker_manager
+$cd dk_docker_manager
 ````
 ````
 $sudo chmod +x dk
